@@ -1,0 +1,15 @@
+import java.awt.Image;
+
+
+public class Pacman extends Moveable {
+
+	public Pacman(Location l, Image im, String direction, int width, int height) {
+		super(l, im, direction, width, height);
+		// TODO Auto-generated constructor stub
+	}
+
+	
+	
+	
+
+}
