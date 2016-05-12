@@ -1,0 +1,99 @@
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.GridLayout;
+import java.awt.Image;
+import java.awt.Point;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+import java.util.Scanner;
+
+import javax.imageio.ImageIO;
+import javax.swing.AbstractAction;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFileChooser;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.KeyStroke;
+
+
+public class PacmanPanel extends JPanel {
+
+	final int WIDTH = 800, HEIGHT = 600;
+	private PacmanBoard pac;
+	
+	public PacmanPanel() {
+		setPreferredSize(new Dimension(WIDTH, HEIGHT));
+		this.setUpWithNullLayout();
+		pac = new PacmanBoard(this);
+		setUpKeyBindings();
+	}
+
+	private void setUpKeyBindings() {
+		this.getInputMap().put(KeyStroke.getKeyStroke("pressed RIGHT"), "RightMove");
+		this.getInputMap().put(KeyStroke.getKeyStroke("pressed LEFT"), "LeftMove");
+		this.getInputMap().put(KeyStroke.getKeyStroke("released LEFT"), "LeftStop");
+		this.getInputMap().put(KeyStroke.getKeyStroke("released RIGHT"), "RightStop");
+		
+		
+		this.getActionMap().put("RightMove",new AbstractAction() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				pac.right();
+			}
+
+		});
+		this.getActionMap().put("LeftMove",new AbstractAction() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				pac.left();
+			}
+
+		});
+		this.getActionMap().put("LeftStop",new AbstractAction() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				pac.stop();
+			}
+
+		});
+		this.getActionMap().put("RightStop",new AbstractAction() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				pac.stop();
+			}
+
+		});
+		
+		this.requestFocusInWindow();
+
+	}
+
+	@Override
+	public void paintComponent(Graphics g) {
+		super.paintComponent(g);
+		pac.draw(g);
+		
+	}
+
+	
+	
+	private void setUpWithNullLayout() {
+		this.setLayout(null);
+		
+	}
+	
+}
