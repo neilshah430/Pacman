@@ -1,0 +1,20 @@
+import java.awt.Dimension;
+
+import javax.swing.JFrame;
+
+
+public class PacmanFrame extends JFrame {
+
+	public static void main(String[] args) {
+		new PacmanFrame();
+	}
+	
+	public PacmanFrame() {
+		super("Pac This Up");
+		this.setDefaultCloseOperation(this.EXIT_ON_CLOSE);
+		this.add(new PacmanPanel());
+		this.pack();
+		this.setVisible(true);
+	}
+
+}
