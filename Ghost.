@@ -1,0 +1,13 @@
+import java.awt.Image;
+
+
+public class Ghost extends Moveable {
+
+	public Ghost(Location l, Image im, String direction, int width, int height) {
+		super(l, im, direction, width, height);
+	}
+
+	
+	
+
+}
