@@ -1,0 +1,64 @@
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.Rectangle;
+
+
+public class Moveable extends Rectangle {
+	
+	private Location loc;
+	private Image i;
+	private String dir; // values of "left", "right", "up", "down"
+	private int w;
+	private int h;
+
+ 
+	public Moveable(Location l, Image im, String direction, int width, int height){
+		loc = l;
+		i = im;
+		dir = direction;
+		w = width;
+		h = height;
+		this.setBounds(loc.getX(), loc.getY(), w, h);
+	}
+	
+	public int getW(){
+		return w;
+	}
+	public int getH(){
+		return h;
+	}
+	public String getDirection(){
+		return dir;
+	}
+	public void updateDirection(String d){
+		dir = d;
+	}
+	public void move(int change){
+		if (dir.equals("left")){
+			loc.updateX(loc.getX() - change);
+			this.translate(-change, 0);
+		}
+		else if (dir.equals("right")){
+			loc.updateX(loc.getX() + change);
+			this.translate(change, 0);
+		}
+		else if(dir.equals("up")){
+			loc.updateY(loc.getY() - change);
+			this.translate(0, -change);
+		}
+		else if (dir.equals("down")){
+			loc.updateY(loc.getY() + change);
+			this.translate(0, change);
+		}
+	}
+	public Image getImage(){
+		return i;
+	}
+	public void updateImage(Image im){
+		i = im;
+	}
+	public void display(Graphics g){
+		g.drawImage(i, loc.getX(), loc.getY(), w, h, null);
+	}
+	
+}
