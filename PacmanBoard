@@ -1,0 +1,29 @@
+import java.awt.Graphics;
+
+public class PacmanBoard {
+
+	public PacmanBoard(PacmanPanel panel) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public void right() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void left() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void stop() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void draw(Graphics g) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}
