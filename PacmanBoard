@@ -1,28 +1,80 @@
 import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.Timer;
 
 public class PacmanBoard {
+	private PacmanPanel panel;
+	private Timer t;
+	private int delay = 100; // for timer (100 milliseconds)
+	private Moveable p;
+	public PacmanBoard(PacmanPanel graphicsPanel) {
+		panel = graphicsPanel;
+		setUpMaze();
+		startTimer();
+	}
 
-	public PacmanBoard(PacmanPanel panel) {
-		// TODO Auto-generated constructor stub
+	private void startTimer() {
+		t = new Timer(delay, new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// what should happen each time the timer goes off?
+				moveStuff();
+				checkCollisions();
+				checkSpawnStuff();
+				panel.repaint();
+				
+
+			}
+
+			
+
+		});
+		t.start();
+	}
+
+	private void checkSpawnStuff() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void checkCollisions() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void moveStuff() {
+		p.move(5);
+		
+	}
+
+	private void setUpMaze() {
+		p = new Pacman(new Location(50, 50),null, "any", 45, 45);
+		
 	}
 
 	public void right() {
-		// TODO Auto-generated method stub
+		p.updateDirection("right");
 		
 	}
 
 	public void left() {
-		// TODO Auto-generated method stub
+		p.updateDirection("left");
 		
 	}
 
-	public void stop() {
-		// TODO Auto-generated method stub
+	public void up() {
+		p.updateDirection("up");
 		
+	}
+	public void down(){
+		p.updateDirection("down");
 	}
 
 	public void draw(Graphics g) {
-		// TODO Auto-generated method stub
+		p.display(g);
 		
 	}
 
