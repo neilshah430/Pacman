@@ -12,8 +12,21 @@ public class Fruit {
 		l = j;
 		i = k;
 	}
+	public Image getImage(){
+		return i;
+	}
+	public void updateImage(Image im){
+		i = im;
+	}
+	public Location getLocation(){
+		return l;
+	}
+	public void updateLocation(Location loc){
+		l = loc;
+	}
 	
 	public void draw(Graphics g) {
 		g.drawImage(i, l.getX(), l.getY(), null);
 	}
+	
 }
