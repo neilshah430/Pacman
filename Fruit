@@ -1,4 +1,19 @@
+import java.awt.Graphics;
+import java.awt.Image;
 
 public class Fruit {
+	
+	private String t = "";
+	private Location l;
+	private Image i;
 
+	public Fruit(String type, Location j, Image k) {
+		t = type;
+		l = j;
+		i = k;
+	}
+	
+	public void draw(Graphics g) {
+		g.drawImage(i, l.getX(), l.getY(), null);
+	}
 }
