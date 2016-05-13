@@ -58,7 +58,7 @@ public class Moveable extends Rectangle {
 		i = im;
 	}
 	public void display(Graphics g){
-		g.drawImage(i, loc.getX(), loc.getY(), w, h, null);
+		g.fill3DRect(loc.getX(), loc.getY(), w, h, true);
 	}
 	
 }
