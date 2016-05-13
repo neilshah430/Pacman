@@ -45,8 +45,8 @@ public class PacmanPanel extends JPanel {
 	private void setUpKeyBindings() {
 		this.getInputMap().put(KeyStroke.getKeyStroke("pressed RIGHT"), "RightMove");
 		this.getInputMap().put(KeyStroke.getKeyStroke("pressed LEFT"), "LeftMove");
-		this.getInputMap().put(KeyStroke.getKeyStroke("released LEFT"), "LeftStop");
-		this.getInputMap().put(KeyStroke.getKeyStroke("released RIGHT"), "RightStop");
+		this.getInputMap().put(KeyStroke.getKeyStroke("pressed UP"), "Up");
+		this.getInputMap().put(KeyStroke.getKeyStroke("pressed DOWN"), "Down");
 		
 		
 		this.getActionMap().put("RightMove",new AbstractAction() {
@@ -63,17 +63,17 @@ public class PacmanPanel extends JPanel {
 			}
 
 		});
-		this.getActionMap().put("LeftStop",new AbstractAction() {
+		this.getActionMap().put("Up",new AbstractAction() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				pac.stop();
+				pac.up();
 			}
 
 		});
-		this.getActionMap().put("RightStop",new AbstractAction() {
+		this.getActionMap().put("Down",new AbstractAction() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				pac.stop();
+				pac.down();
 			}
 
 		});
