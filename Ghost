@@ -1,13 +1,17 @@
 import java.awt.Image;
 
+import java.awt.Image;
 
 public class Ghost extends Moveable {
 
 	public Ghost(Location l, Image im, String direction, int width, int height) {
 		super(l, im, direction, width, height);
 	}
-
 	
-	
+	public void move() {
+		// This is going to be some sort of learning
+		// Algorithm that finds optimal path to follow Pacman
+		// Ghosts speed set to below Pacman's
+	}
 
 }
