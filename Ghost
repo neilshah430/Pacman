@@ -12,7 +12,7 @@ public class Ghost extends Moveable {
 	public void follow(Pacman p) {
 		pxloc = p.getX();
 		pyloc = p.getY();
-	
+		
 		 
 		// This is going to be some sort of learning
 		// Algorithm that finds optimal path to follow Pacman
