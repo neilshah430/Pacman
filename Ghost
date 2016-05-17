@@ -4,6 +4,7 @@ public class Ghost extends Moveable {
 
 `	int pxloc = -1;
 	int pyloc = -1;
+	distance d;
 
 	public Ghost(Location l, Image im, String direction, int width, int height) {
 		super(l, im, direction, width, height);
@@ -13,6 +14,9 @@ public class Ghost extends Moveable {
 		pxloc = p.getX();
 		pyloc = p.getY();
 		
+	public int distance(){
+	
+	}
 		 
 		// This is going to be some sort of learning
 		// Algorithm that finds optimal path to follow Pacman
