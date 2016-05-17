@@ -22,13 +22,15 @@ public class Ghost extends Moveable {
 		if(ghost1<=ghost2 && ghost1<=ghost3 && ghost1<=ghost4){
 			return g1;
 		}
-		if(ghost2<=ghost1 && ghost2<=ghost3 && ghost2<=ghost4){
+		else if(ghost2<=ghost1 && ghost2<=ghost3 && ghost2<=ghost4){
 			return g2;
 		}
-		if(ghost3<=ghost1 && ghost3<=ghost4 && ghost3<=ghost4){
+		else if(ghost3<=ghost1 && ghost3<=ghost2 && ghost3<=ghost4){
 			return g3;
 		}
-		return g4;
+		else{
+			return g4;
+		}
 	}
 	
 	public void move() {
