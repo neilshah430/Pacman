@@ -1,26 +1,24 @@
 import java.awt.Image;
 
 public class Ghost extends Moveable {
-
-`	int pxloc = -1;
-	int pyloc = -1;
-	distance d;
-
+	double d;
 	public Ghost(Location l, Image im, String direction, int width, int height) {
 		super(l, im, direction, width, height);
 	}
 	
-	public void follow(Pacman p) {
-		pxloc = p.getX();
-		pyloc = p.getY();
-		
-	public int distance(){
-	
+	public double distance(Ghost g,Pacman p){
+		double a = p.getX()-g.getX();
+		double b = g.getY()-g.getX();
+		double c = (a*a) + (b*b);
+		d = Math.sqrt(c);
+		return d;
 	}
-		 
+	
+	public void move() {
 		// This is going to be some sort of learning
 		// Algorithm that finds optimal path to follow Pacman
 		// Ghosts speed set to below Pacman's
 	}
 
 }
+
