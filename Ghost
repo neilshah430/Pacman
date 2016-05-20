@@ -7,6 +7,7 @@ public class Ghost extends Moveable {
 	}
 	
 	public double distance(Ghost g,Pacman p){
+		//calculates the distance between Ghost g and Pacman p
 		double a = p.getX()-g.getX();
 		double b = g.getY()-g.getX();
 		double c = (a*a) + (b*b);
@@ -15,6 +16,7 @@ public class Ghost extends Moveable {
 	}
 	
 	public Ghost closest(Ghost g1, Ghost g2, Ghost g3, Ghost g4, Pacman p){
+		//returns closest ghost
 		double ghost1 = distance(g1,p);
 		double ghost2 = distance(g2,p);
 		double ghost3 = distance(g3,p);
