@@ -12,7 +12,7 @@ public class Ghost extends Moveable {
 		double b = g.getY()-g.getX();
 		double c = (a*a) + (b*b);
 		d = Math.sqrt(c);
-		return d;
+		 return d;
 	}
 	
 	public Ghost closest(Ghost g1, Ghost g2, Ghost g3, Ghost g4, Pacman p){
