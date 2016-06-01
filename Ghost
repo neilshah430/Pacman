@@ -17,12 +17,12 @@ public class Ghost extends Moveable {
 	
 	public Ghost closest(Ghost g1, Ghost g2, Ghost g3, Ghost g4, Pacman p){
 		//returns closest ghost
-		double ghost1 = distance(g1,p);
-		double ghost2 = distance(g2,p);
-		double ghost3 = distance(g3,p);
-		double ghost4 = distance(g4,p);
-		if(ghost1<=ghost2 && ghost1<=ghost3 && ghost1<=ghost4){
-			return g1;
+	       	double ghost1 = distance(g1,p);
+	       	double ghost2 = distance(g2,p);
+	       	double ghost3 = distance(g3,p);
+	       	double ghost4 = distance(g4,p);
+	      	if(ghost1<=ghost2 && ghost1<=ghost3 && ghost1<=ghost4){
+	 		return g1;
 		}
 		else if(ghost2<=ghost1 && ghost2<=ghost3 && ghost2<=ghost4){
 			return g2;
